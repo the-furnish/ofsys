@@ -14,12 +14,6 @@ Metrics/LineLength:
 Style/Documentation:
   Enabled: false
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/HashSyntax:
-  Enabled: false
-
 # Offense count: 4
 # Cop supports --auto-correct.
 Style/NumericLiterals:
@@ -29,9 +23,3 @@ Style/NumericLiterals:
 # Configuration parameters: SupportedStyles.
 Style/RaiseArgs:
   EnforcedStyle: compact
-
-# Offense count: 9
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-Style/StringLiterals:
-  Enabled: false

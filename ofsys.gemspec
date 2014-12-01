@@ -13,8 +13,8 @@ Gem::Specification.new do |gem|
   gem.homepage  = 'https://github.com/aishek/ofsys'
   gem.licenses  = ['MIT']
 
-  gem.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  gem.test_files = Dir["spec/**/*"]
+  gem.files = Dir['{lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  gem.test_files = Dir['spec/**/*']
 
   gem.add_runtime_dependency 'yajl-ruby'
 

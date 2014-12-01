@@ -54,11 +54,11 @@ module Ofsys
 
       def merge_auth(source_params)
         source_params.merge!(
-          :AuthKey => {
-            :Key => @key,
-            :idKey => @id_key
+          AuthKey: {
+            Key: @key,
+            idKey: @id_key
           },
-          :idProject => @id_project
+          idProject: @id_project
         )
       end
 
