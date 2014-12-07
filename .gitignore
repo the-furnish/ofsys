@@ -1,0 +1,6 @@
+*.gem
+coverage/
+.bundle/
+log/*.log
+pkg/
+spec/fixtures/
