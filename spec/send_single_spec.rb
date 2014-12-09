@@ -6,7 +6,7 @@ describe Ofsys::Request::SendingsSendSingle do
 
   let(:data) do
     {
-      idMessage: 538731,
+      idMessage: 639093,
       contactFilter: {
         Mode: 'Clauses',
         TableClauses: [
@@ -19,7 +19,7 @@ describe Ofsys::Request::SendingsSendSingle do
                 Name: 'f_EMail'
               },
               TypeOperator: 'Equal',
-              ComparisonValue: 'ab+45@cifronomika.ru'
+              ComparisonValue: 'user@example.com'
             }
           }
         ]
@@ -32,15 +32,13 @@ describe Ofsys::Request::SendingsSendSingle do
       'Success' => true,
       'ErrorCode' => nil,
       'ErrorMessage' => nil,
-      'AffectedContacts' => 1,
-      'idRequest' => 18947426,
-      'Trace' => "Beginning request (04:30:24)\r\n\tchecking OFSYS User authentication: False\r\n\tchecking Dialog Insight administrator: False\r\nTargeted service: Sendings.SendSingle\r\nDeserializing JSON...\r\nDeserializing JSON completed\r\nValidating parameters...\r\nValidating parameterscompleted with success\r\nExecuting method...\r\nExecuting method completed with success"
+      'AffectedContacts' => 1
     }
   end
 
   it 'performs correct request with passed data' do
     VCR.use_cassette('sendings_send_single') do
-      expect(described_class.new.perform(data)).to eq(result)
+      expect(described_class.new.perform(data)).to include_partial_hash(result)
     end
   end
 end

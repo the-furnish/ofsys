@@ -12,7 +12,7 @@ describe Ofsys::Request::ContactsDelete do
           Name: 'f_EMail'
         },
         TypeOperator: 'Equal',
-        ComparisonValue: 'aishek@gmail.com'
+        ComparisonValue: 'user@example.com'
       },
       MaxRows: 1
     }

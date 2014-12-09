@@ -14,12 +14,14 @@ Gem::Specification.new do |gem|
   gem.homepage    = 'https://github.com/the-furnish/ofsys'
   gem.licenses    = ['MIT']
 
-  gem.files = Dir['{lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  gem.files = Dir['{lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   gem.test_files = Dir['spec/**/*']
 
   gem.add_runtime_dependency 'yajl-ruby'
 
+  gem.add_development_dependency 'activesupport'
   gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'rspec-partial-hash'
   gem.add_development_dependency 'webmock'
   gem.add_development_dependency 'vcr'
   gem.add_development_dependency 'coveralls'
