@@ -5,6 +5,14 @@ module Ofsys
     class Base
       class FailedError < RuntimeError; end
 
+      class << self
+        @suppress_id_project = false
+
+        def suppress_id_project
+          @id_project = true
+        end
+      end
+
       def initialize(config = Ofsys.config)
         @id_key = config.id_key
         @key = config.key
@@ -41,6 +49,7 @@ module Ofsys
 
       def body(source_params)
         params = merge_auth(source_params)
+        params.merge!(idProject: @id_project) unless suppress_id_project?
         to_json(params)
       end
 
@@ -57,9 +66,12 @@ module Ofsys
           AuthKey: {
             Key: @key,
             idKey: @id_key
-          },
-          idProject: @id_project
+          }
         )
+      end
+
+      def suppress_id_project?
+        self.class.instance_variable_get(:@suppress_id_project)
       end
 
       def decode_result(body)

@@ -52,7 +52,7 @@ describe Ofsys::Request::ContactsMerge do
 
   it 'performs correct request with passed data' do
     VCR.use_cassette('contacts_merge') do
-      expect(described_class.new.perform(data)).to include_partial_hash(result)
+      expect(described_class.new.perform(data)).to eq(result)
     end
   end
 end

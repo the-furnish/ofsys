@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ofsys (0.0.4)
+    ofsys (0.0.5)
       yajl-ruby
 
 GEM
