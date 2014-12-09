@@ -5,12 +5,8 @@ module Ofsys
     class Base
       class FailedError < RuntimeError; end
 
-      class << self
-        @suppress_id_project = false
-
-        def suppress_id_project
-          @id_project = true
-        end
+      def self.suppress_id_project
+        @suppress_id_project = true
       end
 
       def initialize(config = Ofsys.config)
@@ -71,7 +67,7 @@ module Ofsys
       end
 
       def suppress_id_project?
-        self.class.instance_variable_get(:@suppress_id_project)
+        self.class.instance_variable_get(:@suppress_id_project) || false
       end
 
       def decode_result(body)
